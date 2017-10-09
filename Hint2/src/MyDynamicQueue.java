@@ -26,7 +26,10 @@ public class MyDynamicQueue implements MyQueue {
 	// Basic Operation (Partial) --> Get first element from front of MyQueue: first
 	//-------------------------------------------------------------------
 	public int first(){
-		
+		//-----------------------------
+		// I. SCENARIO IDENTIFICATION
+		//-----------------------------
+		System.out.println("Test");
 	}
 
 	//-------------------------------------------------------------------
