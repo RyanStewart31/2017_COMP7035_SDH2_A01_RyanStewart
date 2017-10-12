@@ -50,12 +50,10 @@ public class MyDynamicQueue implements MyQueue {
 				scenario = 1;
 				break;
 
-
 			// 2.2 - There is just 1 in the queue
 			case 1:
 				scenario = 2;
 				break;
-
 
 			// 2.3 - There are more than 1 items in the queue
 			default:
