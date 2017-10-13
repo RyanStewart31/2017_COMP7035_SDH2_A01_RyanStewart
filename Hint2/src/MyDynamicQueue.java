@@ -4,7 +4,7 @@ public class MyDynamicQueue implements MyQueue {
 	//--------------------------------------------------
 	// Attributes
 	//--------------------------------------------------
-	private MyNode next;
+	private MyNode last;
 	private MyNode head;
 	private int numItems;
 	
@@ -13,7 +13,7 @@ public class MyDynamicQueue implements MyQueue {
 	//-------------------------------------------------------------------		
 	public MyDynamicQueue(){
 		this.numItems = 0;
-		this.next = null;
+		this.last = null;
 		this.head = null;
 	}
 
@@ -50,10 +50,12 @@ public class MyDynamicQueue implements MyQueue {
 				scenario = 1;
 				break;
 
+
 			// 2.2 - There is just 1 in the queue
 			case 1:
 				scenario = 2;
 				break;
+
 
 			// 2.3 - There are more than 1 items in the queue
 			default:
@@ -61,7 +63,7 @@ public class MyDynamicQueue implements MyQueue {
 				break;
 		}
 
-
+		
 		//-----------------------------
 		// II. SCENARIO IMPLEMENTATION
 		//-----------------------------
@@ -74,13 +76,13 @@ public class MyDynamicQueue implements MyQueue {
 			// 2.2 - Set the new MyNode to the 'next' of the head and the next node
 			case 2:
 				this.head.setNext(node);
-				this.next = node;
+				this.last = node;
 				break;
 
 			// 2.3 - Set the new MyNode to the 'next' of the previous node and replace the 'next' with the new node
 			case 3:
-				this.next.setNext(node);
-				this.next = node;
+				this.last.setNext(node);
+				this.last = node;
 				break;
 		}
 

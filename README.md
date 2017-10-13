@@ -1,4 +1,4 @@
-# 2017_COMP7035_SDH2_A01_RyanStewart
+# Ryan Stewart - Linear Data Structures & Algorithms - Assignment 1
 Here I will update my progress of Assignment 1 Hints 1-3.
 
 <strong>Current progress:</strong>
