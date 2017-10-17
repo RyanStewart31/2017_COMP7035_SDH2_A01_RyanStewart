@@ -4,7 +4,6 @@ public class MyDynamicQueue implements MyQueue {
 	//--------------------------------------------------
 	// Attributes
 	//--------------------------------------------------
-	private MyNode last;
 	private MyNode head;
 	private int numItems;
 	
@@ -13,7 +12,6 @@ public class MyDynamicQueue implements MyQueue {
 	//-------------------------------------------------------------------		
 	public MyDynamicQueue(){
 		this.numItems = 0;
-		this.last = null;
 		this.head = null;
 	}
 
@@ -28,7 +26,11 @@ public class MyDynamicQueue implements MyQueue {
 	// Basic Operation (Partial) --> Get first element from front of MyQueue: first
 	//-------------------------------------------------------------------
 	public int first(){
-		return this.head.getInfo();
+		if (!(this.numItems <= 0))
+			return this.head.getInfo();
+
+		// Return -1 if there are no items
+		return -1;
 	}
 
 	//-------------------------------------------------------------------
@@ -40,8 +42,9 @@ public class MyDynamicQueue implements MyQueue {
 		//-----------------------------
 		int scenario = 0;
 
-		// 1 - Instantiate a new MyNode object
-		MyNode node = new MyNode(element, null);
+		// 1 - Instantiate two new MyNode object / 1 for current node 1 aux node
+		MyNode current = new MyNode(element, null);;
+		MyNode node = null;
 
 		// 2 - Test for num items
 		switch (this.numItems) {
@@ -50,44 +53,41 @@ public class MyDynamicQueue implements MyQueue {
 				scenario = 1;
 				break;
 
-
-			// 2.2 - There is just 1 in the queue
-			case 1:
-				scenario = 2;
-				break;
-
-
-			// 2.3 - There are more than 1 items in the queue
+			// 2.2 - There are more than 1 items in the queue
 			default:
-				scenario = 3;
+				scenario = 2;
 				break;
 		}
 
-		
+
 		//-----------------------------
 		// II. SCENARIO IMPLEMENTATION
 		//-----------------------------
 		switch (scenario) {
 			// 2.1 - Set new MyNode to head since this is the first item in the queue
 			case 1:
-				this.head = node;
+				head = current;
 				break;
+
 
 			// 2.2 - Set the new MyNode to the 'next' of the head and the next node
 			case 2:
-				this.head.setNext(node);
-				this.last = node;
-				break;
+				// 2.2.1 - Set aux node to this queue's head
+				node = this.head;
 
-			// 2.3 - Set the new MyNode to the 'next' of the previous node and replace the 'next' with the new node
-			case 3:
-				this.last.setNext(node);
-				this.last = node;
+				// 2.2.2 - Iterate through all nodes until null is found
+				while(node.getNext() != null)
+					// 2.2.2.1 - Set aux node to its next node
+					node = node.getNext();
+
+				// 2.2.3 - Set aux node's next to current
+				node.setNext(current);
 				break;
 		}
 
 		// Increment the numItems by 1
 		this.numItems++;
+
 	}
 	
 	//-------------------------------------------------------------------
