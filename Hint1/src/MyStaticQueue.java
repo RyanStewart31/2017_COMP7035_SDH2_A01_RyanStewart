@@ -117,11 +117,9 @@ public class MyStaticQueue implements MyQueue {
 			// 1 - Check if we can remove any more items
 			case 1:
 				// 1.1 - Iterate through all items
-				for (int i = 0; i < this.numItems; i++)
-					// 1.1.1 - Check if it's not the last item
-					if (i < (this.numItems - 1))
-						// 1.1.1.1 - Move the items one place to the left (front of queue)
-						this.collection[i] = this.collection[i + 1];
+				for (int i = 0; i < this.numItems-1; i++)
+					// 1.1.1.1 - Move the items one place to the left (front of queue)
+					this.collection[i] = this.collection[i + 1];
 
 				// 1.2 - Decrement total num items
 				this.numItems--;
