@@ -39,7 +39,6 @@ public class MyDoubleDynamicQueue<T> implements MyQueue<T> {
 	//-------------------------------------------------------------------
 	// Basic Operation --> Add element to back of MyQueue: addByFirst 
 	//-------------------------------------------------------------------
-	@SuppressWarnings("Duplicates")
 	public void addByFirst(T element){
 		//-----------------------------
 		// I. SCENARIO IDENTIFICATION
@@ -166,7 +165,6 @@ public class MyDoubleDynamicQueue<T> implements MyQueue<T> {
 	//-------------------------------------------------------------------
 	// Basic Operation --> Add element to back of MyQueue: addByLast 
 	//-------------------------------------------------------------------
-	@SuppressWarnings("Duplicates")
 	public void addByLast(T element){
 		//-----------------------------
 		// I. SCENARIO IDENTIFICATION
