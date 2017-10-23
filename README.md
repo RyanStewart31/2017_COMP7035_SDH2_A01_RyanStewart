@@ -5,5 +5,5 @@ Here I will update my progress of Assignment 1 Hints 1-3.
 <ul>
   <li>Hint 1 - <strong>Completed.</strong></li>
   <li>Hint 2 - <strong>Completed.</strong></li>
-  <li>Hint 3 - To be started.</li>
+  <li>Hint 3 - <strong>Completed.</strong></li>
 </ul>
