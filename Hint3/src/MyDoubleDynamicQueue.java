@@ -109,7 +109,7 @@ public class MyDoubleDynamicQueue<T> implements MyQueue<T> {
 		int scenario = 0;
 
 		// 1 - If head is tail
-		if (this.head == this.tail)
+		if (this.head == this.tail && this.numItems == 1)
 			scenario = 1;
 
 		// 2 - if head is empty
@@ -137,7 +137,7 @@ public class MyDoubleDynamicQueue<T> implements MyQueue<T> {
 			// 2 - Head is empty
 			case 2:
 				// 2.1 - Print an error message
-				System.out.println("Sorry, the queue is already empty.");
+				System.out.println("Sorry, the queue is empty.");
 				break;
 
 
@@ -236,11 +236,11 @@ public class MyDoubleDynamicQueue<T> implements MyQueue<T> {
 		int scenario = 0;
 
 
-		if (this.head == this.tail)
+		if (this.head == this.tail && this.numItems == 1)
 			// 1 - head is equal to tail: 1 node in the queue
 			scenario = 1;
 
-		else if (this.tail.getInfo() == null)
+		else if (this.tail.getInfo() == null || this.head.getInfo() == null)
 			// 2 - Tail is empty
 			scenario = 2;
 
